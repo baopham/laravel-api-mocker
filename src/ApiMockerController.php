@@ -42,8 +42,6 @@ class ApiMockerController extends Controller
         $this->config = $this->getConfigForEndpoint();
 
         if ($this->config) {
-            $this->applyMiddleware();
-
             return $this->getNewResponse();
         }
 
@@ -102,15 +100,6 @@ class ApiMockerController extends Controller
         }
 
         return $content;
-    }
-
-    protected function applyMiddleware()
-    {
-        $middlewares = array_get($this->config, 'middleware', []);
-
-        foreach ($middlewares as $middleware) {
-            $this->middleware($middleware);
-        }
     }
 
     protected function getNewResponse()

@@ -66,7 +66,7 @@ return [
         'api/v1/folders/{id}' => [
             'fixture' => '/path/to/fixture.json',
             'middleware' => ['auth'],
-            'methods' => ['GET'],
+            'methods' => ['POST'],
             'code' => 200,
             'placeholder' => true,
         ],

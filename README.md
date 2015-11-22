@@ -8,7 +8,7 @@ Usage:
 
 2. Register Service Provider in `config/app.php`:
 
-```
+```php
     ...
     BaoPham\ApiMocker\ApiMockerServiceProvider::class,
     ...
@@ -18,7 +18,7 @@ Usage:
 
 4. Update the new config file: `config/apimocker.php`:
 
-```
+```php
 <?php
 
 return [

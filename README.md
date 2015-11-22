@@ -4,9 +4,9 @@ Laravel package to mock API endpoints.
 
 Usage:
 ------
-1. `composer require baopham/api-mocker`
+1) `composer require baopham/api-mocker`
 
-2. Register Service Provider in `config/app.php`:
+2) Register Service Provider in `config/app.php`:
 
 ```php
     ...
@@ -14,9 +14,9 @@ Usage:
     ...
 ```
 
-3. `php artisan vendor:publish`
+3) `php artisan vendor:publish`
 
-4. Update the new config file: `config/apimocker.php`:
+4) Update the new config file: `config/apimocker.php`:
 
 ```php
 <?php

@@ -1,17 +1,22 @@
 api-mocker
 ==========
-Laravel package to mock API endpoints.
+Laravel package to mock API endpoints.  
+
+If your apps need to integrate with other APIs (Github, Marketo, etc.), you don't want to invoke their API calls during testing. With this package, you can quickly mock the endpoints and it can be especially useful for Behat tests.  
 
 Usage:
 ------
-1) `composer require baopham/api-mocker`
+1) `composer require baopham/api-mocker --dev`
 
-2) Register Service Provider in `config/app.php`:
+2) Register Service Provider in `app/Providers/AppServiceProvider.php`:
 
 ```php
-    ...
-    BaoPham\ApiMocker\ApiMockerServiceProvider::class,
-    ...
+public function register()
+{
+    if ($this->app->environment() == 'testing') {
+        $this->app->register('BaoPham\ApiMocker\ApiMockerServiceProvider');
+    }
+}
 ```
 
 3) `php artisan vendor:publish`
@@ -61,6 +66,7 @@ return [
     |
     |
     */
+
     'endpoints' => [
 
         'api/v1/folders/{id}' => [

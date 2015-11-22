@@ -40,6 +40,7 @@ return [
     |
     |
     */
+
     'endpoints' => [
 
         'api/v1/folders/{id}' => [

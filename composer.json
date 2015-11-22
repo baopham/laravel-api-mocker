@@ -1,0 +1,29 @@
+{
+  "name": "baopham/api-mocker",
+  "description": "API mocker for Laravel apps",
+  "require": {
+    "illuminate/routing": "^5.1",
+    "illuminate/support": "^5.1"
+  },
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Bao Pham",
+      "email": "gbaopham@gmail.com"
+    }
+  ],
+  "autoload": {
+    "psr-4": {
+      "BaoPham\\ApiMocker\\": "src/"
+    }
+  },
+  "minimum-stability": "dev",
+  "require-dev": {
+    "phpunit/phpunit": "^5.0@dev"
+  },
+  "autoload-dev": {
+    "classmap": [
+      "tests/TestCase.php"
+    ]
+  }
+}

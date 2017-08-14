@@ -60,7 +60,7 @@ class ApiMockerController extends Controller
         $route = Route::getCurrentRoute();
 
         foreach ($this->endpoints as $path => $config) {
-            if ($path == $route->getPath() && $this->checkRequestMethod()) {
+            if ($path == $route->uri() && $this->checkRequestMethod()) {
                 return $config;
             }
         }

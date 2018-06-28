@@ -106,7 +106,7 @@ class ApiMockerController extends Controller
     {
         $content = $this->getResponseContentFromFixture($this->config['fixture']);
 
-        $status = array_get($this->config, 'status', 200);
+        $status = array_get($this->config, 'code', 200);
 
         return new Response($content, $status, ['Content-Type' => 'application/json']);
     }

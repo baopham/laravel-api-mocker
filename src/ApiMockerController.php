@@ -60,7 +60,7 @@ class ApiMockerController extends Controller
         $route = Route::getCurrentRoute();
 
         foreach ($this->endpoints as $path => $config) {
-            if ($path == $route->uri() && $this->checkRequestMethod()) {
+            if ($path == $route->uri() && $this->checkRequestMethod($config)) {
                 return $config;
             }
         }
@@ -68,13 +68,13 @@ class ApiMockerController extends Controller
         return null;
     }
 
-    protected function checkRequestMethod()
+    protected function checkRequestMethod($config)
     {
-        if (! isset($this->config['methods'])) {
+        if (! isset($config['methods'])) {
             return true;
         }
 
-        return in_array($this->request->getMethod(), $this->config['methods']);
+        return in_array($this->request->getMethod(), $config['methods']);
     }
 
     protected function getResponseContentFromFixture()

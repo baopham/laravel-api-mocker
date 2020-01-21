@@ -3,8 +3,8 @@
   "description": "API mocker for Laravel apps",
   "keywords": ["laravel", "api", "mock"],
   "require": {
-    "illuminate/routing": "^5.1",
-    "illuminate/support": "^5.1"
+    "illuminate/routing": "^5.1|^6.0",
+    "illuminate/support": "^5.1|^6.0"
   },
   "license": "MIT",
   "authors": [

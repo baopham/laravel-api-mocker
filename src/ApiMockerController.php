@@ -108,7 +108,13 @@ class ApiMockerController extends Controller
 
         $status = array_get($this->config, 'code', 200);
 
-        return new Response($content, $status, ['Content-Type' => 'application/json']);
+        $header = ['Content-Type' => 'application/json'];
+
+        if (! empty($this->config['header'])) {
+            $header = $this->config['header'];
+        }
+        
+        return new Response($content, $status, $header);
     }
 
 }
